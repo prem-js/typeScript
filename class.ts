@@ -1,5 +1,7 @@
 class Employee { 
-    employeeName: string;
+    private employeeName: string;
+    protected empId:string;
+    public email: string;
     constructor(name: string){
         this.employeeName = name;
     }
@@ -9,7 +11,7 @@ class Employee {
     }
 }
 let emp = new  Employee('Prem');
-console.log(emp.employeeName);
+//console.log(emp.employeeName); error now because private now
 emp.greet();
 
 class Manager extends Employee {
@@ -21,6 +23,6 @@ class Manager extends Employee {
     }
 }
 let m = new  Manager('Prem');
-console.log(m.employeeName);
+//console.log(m.employeeName);
 m.delegateWork();
 m.greet();
